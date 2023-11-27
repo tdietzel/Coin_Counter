@@ -8,9 +8,13 @@ export const checkInput = (input) => {
       const newTotal = total - 0.25;
       const newArray = [array[0] + 1, array[1], array[2], array[3]];
       return calculateCoins(newTotal, newArray);
-    } else if ((total >= .10) && (total < .25)) {
+    } else if (total >= .10) {
       const newTotal = total - 0.10;
       const newArray = [array[0], array[1] + 1, array[2], array[3]];
+      return calculateCoins(newTotal, newArray);
+    } else if (total >= .05) {
+      const newTotal = total - 0.05;
+      const newArray = [array[0], array[1], array[2] + 1, array[3]];
       return calculateCoins(newTotal, newArray);
     } else {
       return array;

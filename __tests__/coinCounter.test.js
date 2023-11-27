@@ -16,4 +16,8 @@ describe ('checkInput', () => {
     expect(checkInput(.35)).toEqual([1,1,0,0]);
   });
 
+  test("It should add 1 to the nickels value if input is greater than or equal to .05", () => {
+    expect(checkInput(.05)).toEqual([0,0,1,0]);
+    expect(checkInput(.40)).toEqual([1,1,1,0]);
+  });
 })

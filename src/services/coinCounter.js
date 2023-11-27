@@ -56,6 +56,18 @@ export function calculateAmount(input) {
       }
     }
   }
+  if (input === "nickel") {
+    return function(amount,totalCoins = 0) {
+      const remainder = Math.round(amount * 100) / 100;
+      if (remainder >= .05) {
+        const newRemainder = remainder - 0.05;
+        const newTotalCoins = totalCoins + 1;
+        return calculateAmount("nickel")(newRemainder,newTotalCoins);
+      } else {
+        return [totalCoins,remainder];
+      }
+    }
+  }
   return "error";
 }
 

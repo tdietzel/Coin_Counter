@@ -1,3 +1,5 @@
+// Recursion Example
+
 export const checkInput = (input) => {
   if (isNaN(input)) {
     return "error";
@@ -27,6 +29,8 @@ export const checkInput = (input) => {
   return calculateCoins(input, [0, 0, 0, 0]);
 }
 
+// Closure Example
+
 export function calculateAmount(input) {
   if (input === "quarter") {
     return function(amount,totalCoins = 0) {
@@ -35,6 +39,18 @@ export function calculateAmount(input) {
         const newRemainder = remainder - 0.25;
         const newTotalCoins = totalCoins + 1;
         return calculateAmount("quarter")(newRemainder,newTotalCoins);
+      } else {
+        return [totalCoins,remainder];
+      }
+    }
+  }
+  if (input === "dime") {
+    return function(amount,totalCoins = 0) {
+      const remainder = Math.round(amount * 100) / 100;
+      if (remainder >= .1) {
+        const newRemainder = remainder - 0.1;
+        const newTotalCoins = totalCoins + 1;
+        return calculateAmount("dime")(newRemainder,newTotalCoins);
       } else {
         return [totalCoins,remainder];
       }

@@ -1,9 +1,9 @@
-import { coinCounter } from '../src/services/coinCounter.js'
+import { CoinCounter } from '../src/services/coinCounter.js'
 
-describe ('coinCounter', () => {
+describe ('CoinCounter', () => {
 
   test("It should return an error if input is NaN", () => {
-    expect(coinCounter("text")).toEqual("error");
+    expect(CoinCounter.checkInput("text")).toEqual("error");
   });
 
 })

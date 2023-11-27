@@ -1,0 +1,63 @@
+{
+  "name": "shape-tracker",
+  "eslintConfig": {
+    "env": {
+      "es6": true
+    },
+    "plugins": [
+      "fp"
+    ],
+    "rules": {
+      "fp/no-arguments": "error",
+      "fp/no-class": "error",
+      "fp/no-delete": "error",
+      "fp/no-events": "error",
+      "fp/no-get-set": "error",
+      "fp/no-let": "error",
+      "fp/no-loops": "error",
+      "fp/no-mutating-assign": "error",
+      "fp/no-mutating-methods": "error",
+      "fp/no-mutation": "error",
+      "fp/no-nil": "error",
+      "fp/no-proxy": "error",
+      "fp/no-rest-parameters": "error",
+      "fp/no-this": "error",
+      "fp/no-throw": "error",
+      "fp/no-unused-expression": "error",
+      "fp/no-valueof-field": "error",
+      "no-var": "error"
+    }
+  },
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode=development",
+    "start": "webpack-dev-server --open --mode=development",
+    "lint": "eslint src --ext .js",
+    "test": "jest --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.22.5",
+    "@babel/plugin-transform-modules-commonjs": "^7.22.5",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.8.1",
+    "dotenv-webpack": "^8.0.1",
+    "eslint": "^8.54.0",
+    "eslint-plugin-fp": "^2.3.0",
+    "eslint-webpack-plugin": "^4.0.1",
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.3",
+    "jest": "^29.5.0",
+    "style-loader": "^3.3.0",
+    "webpack": "5.87.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "4.15.1"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.3"
+  }
+}

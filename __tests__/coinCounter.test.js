@@ -39,4 +39,9 @@ describe ('calculateAmount', () => {
     expect(calculateAmount("quarter")(1.10)).toEqual([4,0.1]);
   });
 
+  test("It should return an array specifying the amount of dimes and the leftover change if 'dime' is specified.", () => {
+    expect(calculateAmount("dime")(.50)).toEqual([5,0]);
+    expect(calculateAmount("dime")(.25)).toEqual([2,0.05]);
+  });
+
 });

@@ -1,5 +1,5 @@
 {
-  "name": "shape-tracker",
+  "name": "coin-counter",
   "eslintConfig": {
     "env": {
       "es6": true

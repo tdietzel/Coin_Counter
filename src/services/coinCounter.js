@@ -68,6 +68,18 @@ export function calculateAmount(input) {
       }
     }
   }
+  if (input === "penny") {
+    return function(amount,totalCoins = 0) {
+      const remainder = Math.round(amount * 100) / 100;
+      if (remainder >= .01) {
+        const newRemainder = remainder - 0.01;
+        const newTotalCoins = totalCoins + 1;
+        return calculateAmount("penny")(newRemainder,newTotalCoins);
+      } else {
+        return [totalCoins,remainder];
+      }
+    }
+  }
   return "error";
 }
 

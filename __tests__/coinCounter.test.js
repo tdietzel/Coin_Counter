@@ -48,4 +48,8 @@ describe ('calculateAmount', () => {
     expect(calculateAmount("nickel")(.10)).toEqual([2,0]);
     expect(calculateAmount("nickel")(.14)).toEqual([2,0.04]);
   });
+
+  test("It should return an array specifying the amount of pennies and the leftover change if 'penny' is specified.", () => {
+    expect(calculateAmount("penny")(.02)).toEqual([2,0]);
+  });
 });

@@ -29,7 +29,7 @@ describe ('checkInput', () => {
 });
 
 describe ('closureCounter', () => {
-  test("It should return an error if input is NaN", () => {
+  test("It should return an error unless the input is the word quarter, dime, nickel, or penny", () => {
     expect(closureCounter("text")).toEqual("error");
   });
 });

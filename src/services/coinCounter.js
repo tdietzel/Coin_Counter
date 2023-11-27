@@ -28,7 +28,5 @@ export const checkInput = (input) => {
 }
 
 export const closureCounter = (input) => {
-  if (isNaN(input)) {
-    return "error";
-  }
+  return "error";
 }

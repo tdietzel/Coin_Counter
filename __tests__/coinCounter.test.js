@@ -44,4 +44,8 @@ describe ('calculateAmount', () => {
     expect(calculateAmount("dime")(.25)).toEqual([2,0.05]);
   });
 
+  test("It should return an array specifying the amount of nickels and the leftover change if 'nickel' is specified.", () => {
+    expect(calculateAmount("nickel")(.10)).toEqual([2,0]);
+    expect(calculateAmount("nickel")(.14)).toEqual([2,0.04]);
+  });
 });

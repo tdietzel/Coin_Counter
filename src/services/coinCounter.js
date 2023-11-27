@@ -27,6 +27,49 @@ export const checkInput = (input) => {
   return calculateCoins(input, [0, 0, 0, 0]);
 }
 
-export const closureCounter = (input) => {
+export function calculateAmount(input) {
+  if (input === "quarter") {
+    return function(amount,totalCoins = 0) {
+      const remainder = Math.round(amount * 100) / 100;
+      if (remainder >= .25) {
+        const newRemainder = remainder - 0.25;
+        const newTotalCoins = totalCoins + 1;
+        return calculateAmount("quarter")(newRemainder,newTotalCoins);
+      } else {
+        return [totalCoins,remainder];
+      }
+    }
+  }
   return "error";
 }
+
+// $1.10
+// [4, 0.10]
+
+// [0, 1.10]
+// [1, 0.85]
+// [2, 0.60]
+// [3, 0.35]
+
+
+
+// calculateAmount("quarters")(.25)
+
+
+
+// function welcome(salutation) {
+//   return function(yourName) {
+//     return `${salutation}! Nice to meet you, ${yourName}!`
+//   }
+// }
+
+
+// const heyThere = welcome("Hey there");
+
+// > heyThere()
+// "Hey there! Nice to meet you, undefined!"
+
+// > heyThere("Joe")
+// "Hey there! Nice to meet you, Joe!"
+
+// welcome("Hey there")("Joe")

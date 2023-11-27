@@ -1,5 +1,5 @@
 import { checkInput } from '../src/services/coinCounter.js';
-import { closureCounter } from '../src/services/coinCounter.js';
+import { calculateAmount } from '../src/services/coinCounter.js';
 
 describe ('checkInput', () => {
 
@@ -28,8 +28,15 @@ describe ('checkInput', () => {
   });
 });
 
-describe ('closureCounter', () => {
+describe ('calculateAmount', () => {
+
   test("It should return an error unless the input is the word quarter, dime, nickel, or penny", () => {
-    expect(closureCounter("text")).toEqual("error");
+    expect(calculateAmount("text")).toEqual("error");
   });
+
+  test("It should return an array specifying the amount of quarters and the leftover change if 'quarter' is specified.", () => {
+    expect(calculateAmount("quarter")(.50)).toEqual([2,0]);
+    expect(calculateAmount("quarter")(1.10)).toEqual([4,0.1]);
+  });
+
 });

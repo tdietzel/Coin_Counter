@@ -16,6 +16,10 @@ export const checkInput = (input) => {
       const newTotal = total - 0.05;
       const newArray = [array[0], array[1], array[2] + 1, array[3]];
       return calculateCoins(newTotal, newArray);
+    } else if (total >= .01) {
+      const newTotal = total - 0.01;
+      const newArray = [array[0], array[1], array[2], array[3] + 1];
+      return calculateCoins(newTotal, newArray);
     } else {
       return array;
     }

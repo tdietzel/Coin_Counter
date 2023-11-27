@@ -1,4 +1,5 @@
-import { checkInput } from '../src/services/coinCounter.js'
+import { checkInput } from '../src/services/coinCounter.js';
+import { closureCounter } from '../src/services/coinCounter.js';
 
 describe ('checkInput', () => {
 
@@ -24,5 +25,11 @@ describe ('checkInput', () => {
   test("It should add 1 to the pennies value if input is greater than or equal to .01", () => {
     expect(checkInput(.01)).toEqual([0,0,0,1]);
     expect(checkInput(.41)).toEqual([1,1,1,1]);
+  });
+});
+
+describe ('closureCounter', () => {
+  test("It should return an error if input is NaN", () => {
+    expect(closureCounter("text")).toEqual("error");
   });
 });

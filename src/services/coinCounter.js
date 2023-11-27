@@ -26,3 +26,9 @@ export const checkInput = (input) => {
   }
   return calculateCoins(input, [0, 0, 0, 0]);
 }
+
+export const closureCounter = (input) => {
+  if (isNaN(input)) {
+    return "error";
+  }
+}
